@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 import { Calendar as CalendarIcon } from "lucide-react";
 
@@ -136,6 +137,30 @@ export function NewEventForm() {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="days"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Days of Week</FormLabel>
+              <FormControl>
+                <ToggleGroup variant="outline" type="multiple">
+                  <ToggleGroupItem value="sunday">Sun</ToggleGroupItem>
+                  <ToggleGroupItem value="monday">Mon</ToggleGroupItem>
+                  <ToggleGroupItem value="tuesday">Tue</ToggleGroupItem>
+                  <ToggleGroupItem value="wednesday">Wed</ToggleGroupItem>
+                  <ToggleGroupItem value="thursday">Thu</ToggleGroupItem>
+                  <ToggleGroupItem value="friday">Fri</ToggleGroupItem>
+                  <ToggleGroupItem value="saturday">Sat</ToggleGroupItem>
+                </ToggleGroup>
+              </FormControl>
+              <FormDescription>
+                Or select the days of the week you want to poll for
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        ></FormField>
         <Button type="submit">Submit</Button>
       </form>
     </Form>
