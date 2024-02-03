@@ -5,11 +5,10 @@ export default async function Event({
 }: {
   params: { eventID: string };
 }) {
-  const event = await getEventById(params.eventID);
+  // const event = await getEventById(params.eventID);
   return (
-    <>
-      <h1>Event</h1>
-      <pre>{JSON.stringify(event, null, 2)}</pre>
-    </>
+    <main>
+      <h1>Helo</h1>
+    </main>
   );
 }
